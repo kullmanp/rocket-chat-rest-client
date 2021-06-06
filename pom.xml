@@ -68,11 +68,8 @@
 							<autoCreateCustomNetworks>true</autoCreateCustomNetworks>
 							<images>
 								<image>
-									<name>rocketchat:3.8.3</name>
+									<name>rocketchat/rocket.chat:latest</name>
 									<alias>rocketchat</alias>
-									<build>
-										<dockerFileDir>rocketchat</dockerFileDir>
-									</build>
 									<run>
 										<log>
 											<enabled>false</enabled>
@@ -86,6 +83,12 @@
 										</dependsOn>
 										<env>
 											<API_Enable_Rate_Limiter>false</API_Enable_Rate_Limiter>
+											<MONGO_URL>mongodb://mongo:27017/rocketchat</MONGO_URL>
+											<MONGO_OPLOG_URL>mongodb://mongo:27017/local</MONGO_OPLOG_URL>
+    										<Log_Level>2</Log_Level>
+    										<ADMIN_USERNAME>admin</ADMIN_USERNAME>
+ 											<ADMIN_PASS>supersecret</ADMIN_PASS>
+ 											<ADMIN_EMAIL>admin@example.com</ADMIN_EMAIL>
 										</env>
 										<wait>
 											<http>
